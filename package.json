@@ -21,6 +21,7 @@
     "chai": "1.10.0",
     "jshint": "2.8.0",
     "mocha": "2.1.0",
+    "coveralls": "^2.11.2",
     "isomorphic-fetch": "",
     "es6-promise": "",
     "rx": ""

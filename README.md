@@ -68,6 +68,18 @@ github.repos('yongjhih').subscribe(function (repo) {
 npm install rx-github
 ```
 
+## Test
+
+```sh
+npm test
+```
+
+## docker test
+
+```sh
+./docker-run.sh
+```
+
 ## License
 
 ```

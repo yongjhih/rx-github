@@ -8,7 +8,7 @@ function noop() {}
 function RxGitHub() {
 }
 
-RxGitHub.prototype.fetch = fetch;
+RxGitHub.Fetch = fetch;
 function fetch(url, options) {
     return Rx.Observable.fromPromise(Fetch(url, options)).flatMap(function (response) {
         var next = response.headers.get('Link').replace(/<([^<]*)>; rel="next".*/, '$1');
@@ -16,7 +16,7 @@ function fetch(url, options) {
     });
 }
 
-RxGitHub.prototype.repos = repos;
+RxGitHub.Repos = repos;
 function repos(user) {
     return fetch('https://api.github.com/users/' + user + '/repos')
         .map(function (response) { return response.json(); })

@@ -4,14 +4,14 @@
 
 ```js
 var RxGitHub = require('rx-github');
-RxGitHub.fetch(url, options).subscribe(function (json) {
+RxGitHub.Fetch('https://api.github.com/users/yongjhih/repos').subscribe(function (json) {
   console.log(json);
 });
 ```
 
 ```js
 var RxGitHub = require('rx-github');
-RxGitHub.repos('yongjhih').subscribe(function (repo) {
+RxGitHub.Repos('yongjhih').subscribe(function (repo) {
   console.log(repo.name);
 });
 ```

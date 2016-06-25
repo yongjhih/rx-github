@@ -1,5 +1,7 @@
 # rx-github
 
+![](art/rx-github.png)
+
 ## Usage
 
 ```js

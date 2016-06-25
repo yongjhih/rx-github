@@ -29,6 +29,14 @@ RxGitHub.Repos('yongjhih').subscribe(function (repo) {
 });
 ```
 
+or
+
+```js
+var RxGitHub = require('rx-github');
+var github = new RxGitHub({ token: token; });
+github.repos('yongjhih');
+```
+
 ## Installation
 
 ```sh

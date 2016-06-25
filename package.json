@@ -3,8 +3,20 @@
   "description": "rx-github",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "yongjhih/rx-github",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yongjhih/rx-github.git"
+  },
+  "keywords": [
+    "github",
+    "rx"
+  ],
+  "author": "Andrew Chen",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yongjhih/rx-github/issues"
+  },
+  "homepage": "https://github.com/yongjhih/rx-github",
   "devDependencies": {
     "chai": "1.10.0",
     "jshint": "2.8.0",

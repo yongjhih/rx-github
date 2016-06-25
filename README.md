@@ -29,13 +29,30 @@ RxGitHub.Repos('yongjhih').subscribe(function (repo) {
 });
 ```
 
-or
+## TODO
 
 ```js
 var RxGitHub = require('rx-github');
 var github = new RxGitHub({ token: token; });
 github.repos('yongjhih');
 ```
+
+```js
+var RxGitHub = require('rx-github');
+RxGitHub.token({ key: CLIENT_ID, secret: CLIENT_SECRET}).subscribe(function (token) {
+  console.log(token);
+});
+```
+
+```js
+var RxGitHub = require('rx-github');
+var github = new RxGitHub({ key: CLIENT_ID, secret: CLIENT_SECRET});
+
+github.repos('yongjhih').subscribe(function (repo) {
+  console.log(repo.name);
+});
+```
+
 
 ## Installation
 

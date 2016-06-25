@@ -53,6 +53,14 @@ github.repos('yongjhih').subscribe(function (repo) {
 });
 ```
 
+```js
+var RxGitHub = require('rx-github');
+var github = new RxGitHub({ username: USERNAME, password: PASSWORD});
+
+github.repos('yongjhih').subscribe(function (repo) {
+  console.log(repo.name);
+});
+```
 
 ## Installation
 

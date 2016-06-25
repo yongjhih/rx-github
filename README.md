@@ -74,7 +74,7 @@ npm install rx-github
 npm test
 ```
 
-## docker test
+## docker
 
 ```sh
 ./docker-run.sh

@@ -1,0 +1,15 @@
+{
+  "name": "rx-github",
+  "description": "rx-github",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "yongjhih/rx-github",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "1.10.0",
+    "jshint": "2.8.0",
+    "mocha": "2.1.0",
+    "node-fetch": "",
+    "rx": ""
+  }
+}

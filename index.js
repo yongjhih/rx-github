@@ -1,6 +1,8 @@
 module.exports = RxGitHub;
 
-var Fetch = require('node-fetch');
+require('es6-promise').polyfill();
+var Fetch = require('isomorphic-fetch');
+
 var Rx = require('rx');
 
 function noop() {}

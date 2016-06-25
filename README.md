@@ -33,20 +33,20 @@ RxGitHub.Repos('yongjhih').subscribe(function (repo) {
 
 ```js
 var RxGitHub = require('rx-github');
-var github = new RxGitHub({ token: token; });
+var github = new RxGitHub({ token: token });
 github.repos('yongjhih');
 ```
 
 ```js
 var RxGitHub = require('rx-github');
-RxGitHub.token({ key: CLIENT_ID, secret: CLIENT_SECRET}).subscribe(function (token) {
+RxGitHub.token({ key: CLIENT_ID, secret: CLIENT_SECRET }).subscribe(function (token) {
   console.log(token);
 });
 ```
 
 ```js
 var RxGitHub = require('rx-github');
-var github = new RxGitHub({ key: CLIENT_ID, secret: CLIENT_SECRET});
+var github = new RxGitHub({ key: CLIENT_ID, secret: CLIENT_SECRET });
 
 github.repos('yongjhih').subscribe(function (repo) {
   console.log(repo.name);
@@ -55,7 +55,7 @@ github.repos('yongjhih').subscribe(function (repo) {
 
 ```js
 var RxGitHub = require('rx-github');
-var github = new RxGitHub({ username: USERNAME, password: PASSWORD});
+var github = new RxGitHub({ username: USERNAME, password: PASSWORD });
 
 github.repos('yongjhih').subscribe(function (repo) {
   console.log(repo.name);

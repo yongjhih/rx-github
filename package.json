@@ -27,7 +27,10 @@
     "rx": ""
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha test/test.js",
+    "report": "istanbul cover _mocha -- -R spec test/test.js",
+    "coverage": "istanbul cover _mocha --report lcovonly -- -R spec test/test.js && cat ./coverage/lcov.info | coveralls"
   },
   "engines": {
     "node": ">=4.3"

@@ -74,10 +74,10 @@ npm install rx-github
 npm test
 ```
 
-## docker
+or
 
 ```sh
-./docker-run.sh
+./docker-npm-test.sh
 ```
 
 ## License

@@ -3,7 +3,6 @@ var expect = chai.expect;
 var nock = require('nock');
 var RxGitHub = require('../index');
 
-var fetch = require('../index.js');
 describe('rx-github', function() {
   it('should be defined', function() {
     expect(RxGitHub).to.be.a('function');

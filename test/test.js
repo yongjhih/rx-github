@@ -12,7 +12,7 @@ describe('rx-github', function() {
     expect(RxGitHub.Repos).to.be.a('function');
   });
 
-  it('Fetch("yongjhih") should be least 1', function(done) {
+  it('Fetch("yongjhih") should be completed', function(done) {
     // https://api.github.com/users/yongjhih/repos
     nock('https://api.github.com')
       .get('/users/yongjhih/repos')
@@ -24,13 +24,13 @@ describe('rx-github', function() {
       .get('/user/213736/repos?page=2')
       .replyWithFile(200, __dirname + '/repos.2.json');
 
-    RxGitHub.Fetch('//api.github.com/users/yongjhih/repos').subscribe(function (it) {
+    RxGitHub.Fetch('https://api.github.com/users/yongjhih/repos').subscribe(function (it) {
     }, function (e) {}, function () {
       done();
     });
   });
 
-  it('Repos("yongjhih") should be least 1 repo', function(done) {
+  it('Repos("yongjhih") should be completed', function(done) {
     // https://api.github.com/users/yongjhih/repos
     nock('https://api.github.com')
       .get('/users/yongjhih/repos')
@@ -42,14 +42,13 @@ describe('rx-github', function() {
       .get('/user/213736/repos?page=2')
       .replyWithFile(200, __dirname + '/repos.2.json');
 
-    RxGitHub.Repos('yongjhih', '//api.github.com').subscribe(function (it) {
+    RxGitHub.Repos('yongjhih', 'https://api.github.com').subscribe(function (it) {
     }, function (e) {
-      console.log(e);
-      expect(e).be.an.instanceOf(TypeError);
-      done();
     }, function () {
       done();
     });
   });
 
 });
+
+/* vim: set sw=2: */

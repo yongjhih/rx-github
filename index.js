@@ -17,8 +17,9 @@ function fetch(url, options) {
         try {
             next = response.headers.get('Link').replace(/<([^<]*)>; rel="next".*/, '$1');
         } catch (e) {
+          // do nothing
         }
-        return Rx.Observable.concat(Rx.Observable.just(response), next ? fetch(next) : Rx.Observable.empty());
+        return Rx.Observable.concat(Rx.Observable.fromPromise(response.json()), next ? fetch(next, options) : Rx.Observable.empty());
     });
 }
 
@@ -26,8 +27,8 @@ RxGitHub.Repos = repos;
 function repos(user, baseUrl) {
     if (!baseUrl) baseUrl = 'https://api.github.com';
     var url = baseUrl + `/users/${user}/repos`;
-    console.log(url);
     return fetch(url)
-        .map(function (response) { return response.json(); })
         .flatMap(function (json) { return Rx.Observable.from(json); });
 }
+
+/* vim: set sw=2: */

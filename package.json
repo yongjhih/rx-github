@@ -35,7 +35,7 @@
     "repos": "node repos.js",
     "test": "mocha test/test.js",
     "report": "istanbul cover _mocha -- -R spec test/test.js",
-    "coverage": "istanbul cover _mocha --report lcovonly -- -R spec test/test.js && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec test/test.js && cat ./coverage/lcov.info | coveralls"
   },
   "engineStrict": true,
   "engines": {

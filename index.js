@@ -15,7 +15,8 @@ function fetch(url, options) {
     return Rx.Observable.fromPromise(Fetch(url, options)).flatMap(function (response) {
         var next;
         try {
-            next = response.headers.get('Link').replace(/<([^<]*)>; rel="next".*/, '$1');
+            next = response.headers.get('Link').replace(/.*<([^<>]*)>; rel="next".*/, '$1');
+            if (!next.startsWith('http')) next = undefined;
         } catch (e) {
           // do nothing
         }
@@ -25,8 +26,8 @@ function fetch(url, options) {
 
 RxGitHub.Repos = repos;
 function repos(user, baseUrl) {
-    if (!baseUrl) baseUrl = 'https://api.github.com';
-    var url = baseUrl + `/users/${user}/repos`;
+    baseUrl = baseUrl || 'https://api.github.com';
+    var url = `${baseUrl}/users/${user}/repos`;
     return fetch(url)
         .flatMap(function (json) { return Rx.Observable.from(json); });
 }
